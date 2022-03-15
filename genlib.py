@@ -19,5 +19,5 @@ def create_creture(gen_lengh=10, creature_name='one'):
 
 def create_generation(generation_size=50):
     generation = pd.DataFrame(data=[create_creture(creature_name=(str(i))+'n') for i in range(generation_size)])
-
+    generation['quality'] = generation.sum(axis=1)
     return generation

@@ -28,16 +28,5 @@ if __name__ == '__main__':
 
     print('create test generation \n')
     test_generation = genlib.create_generation()
-    print(test_generation)
-    print(test_generation.describe())
+    print(test_generation.sort_values('quality', ascending=False))
 
-# test_generation['Summury'] = test_generation.apply(lambda x: sum(x), axis=0)
-# test_generation = test_generation.assign(Summury = lambda x: (sum(x)))
-# print(test_generation)
-
-# test_generation.columns.append()
-
-# test_generation.iloc[i].sum()
-
-#test_generation['summury'] = np.where(test_generation.sum())
-print(test_generation.sum(axis=1))
