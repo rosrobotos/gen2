@@ -19,6 +19,7 @@ def create_creature(gen_length=10, creature_name='one'):
                              ],
                         name=creature_name
                         )
+
     return creature
 
 
@@ -30,4 +31,5 @@ def create_generation(generation_size=50):
                                    ]
                              )
     generation['quality'] = generation.sum(axis=1)
+
     return generation
