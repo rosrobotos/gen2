@@ -10,6 +10,7 @@ __author__ = 'github.com/rosrobotos'
 
 import pandas as pd
 import random as rnd
+pd.plotting.register_matplotlib_converters()
 
 
 def create_creature(gen_length=10, creature_name='one'):
