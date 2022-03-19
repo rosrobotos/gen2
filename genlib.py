@@ -5,7 +5,7 @@ create_creature() return creature (pandas Series)
 create_generation return generation (pandas DataFrame)
 """
 
-__version__ = 0.11
+__version__ = 0.12
 __author__ = 'github.com/rosrobotos'
 
 import pandas as pd
@@ -37,3 +37,13 @@ def create_generation(generation_size=50):
     return generation
 
 
+def describe_generation(generation):
+    """ print quality values, and indexes for any of this values"""
+
+    print('\n count of any quality')
+    print(generation.quality.value_counts())
+
+    for i in generation.quality.unique():
+        print(' quality = ', i, end=': ')
+        print(generation.loc[generation.quality == i, 'quality'].index.values)
+        print('__')

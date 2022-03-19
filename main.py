@@ -3,8 +3,8 @@ I'm trying build genetic algorithm again....
 
 """
 
-__version__ = 0.2
-__author__ = 'github.com/rosrobotos'
+__version__ = 0.21
+__author__ = 'github.com/rosrobots'
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -31,10 +31,4 @@ if __name__ == '__main__':
     #   sns.barplot(x=test_generation.index, y=test_generation.sort_values('quality').quality)
     #   plt.show()
 
-    print('\n count of any quality')
-    print(test_generation.quality.value_counts())
-
-    for i in test_generation.quality.unique():
-        print(' quality = ', i, end=': ')
-        print(test_generation.loc[test_generation.quality == i, 'quality'].index.values)
-        print('__')
+    genlib.describe_generation(test_generation)
