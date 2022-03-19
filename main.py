@@ -7,6 +7,7 @@ __version__ = 0.2
 __author__ = 'github.com/rosrobotos'
 
 import matplotlib.pyplot as plt
+import pandas as pd
 import seaborn as sns
 
 import genlib
@@ -30,12 +31,10 @@ if __name__ == '__main__':
     #   sns.barplot(x=test_generation.index, y=test_generation.sort_values('quality').quality)
     #   plt.show()
 
-    print('\n')
-    #    print(test_generation.sort_values('quality').iloc[-5:])
-    #    print(test_generation.sort_values('quality').iloc[-5:].index)
-    print(test_generation.quality.unique())
+    print('\n count of any quality')
+    print(test_generation.quality.value_counts())
 
     for i in test_generation.quality.unique():
         print(' quality = ', i)
-        print(test_generation.loc[test_generation.quality == i, 'quality'])
-        print('\n')
+        print(test_generation.loc[test_generation.quality == i, 'quality'], end='')
+        print('\n __')
