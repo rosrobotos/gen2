@@ -31,9 +31,11 @@ if __name__ == '__main__':
     #   plt.show()
 
     print('\n')
-    print(test_generation.sort_values('quality').iloc[-5:])
-    print(test_generation.sort_values('quality').iloc[-5:].index)
+    #    print(test_generation.sort_values('quality').iloc[-5:])
+    #    print(test_generation.sort_values('quality').iloc[-5:].index)
     print(test_generation.quality.unique())
+
     for i in test_generation.quality.unique():
-        print(test_generation.iloc[[test_generation.quality == i]])
+        print(' quality = ', i)
+        print(test_generation.loc[test_generation.quality == i, 'quality'])
         print('\n')
