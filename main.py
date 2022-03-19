@@ -35,6 +35,6 @@ if __name__ == '__main__':
     print(test_generation.quality.value_counts())
 
     for i in test_generation.quality.unique():
-        print(' quality = ', i)
-        print(test_generation.loc[test_generation.quality == i, 'quality'], end='')
-        print('\n __')
+        print(' quality = ', i, end=': ')
+        print(test_generation.loc[test_generation.quality == i, 'quality'].index.values)
+        print('__')
