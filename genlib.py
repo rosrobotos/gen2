@@ -30,18 +30,18 @@ def create_creature(gen_length=10, creature_name='one'):
 def create_generation(generation_size=50, gen_length=10):
     generation = pd.DataFrame(
         data=[
-            create_creature(
-                            creature_name=(str(i + 1)) + 'th',
-                            gen_length=gen_length
-                            ) for i in range(generation_size)
-        ]
+              create_creature(
+                              creature_name=(str(i + 1)) + 'th',
+                              gen_length=gen_length
+                             ) for i in range(generation_size)
+             ]
     )
     generation['quality'] = generation.sum(axis=1)
 
     return generation
 
 
-def quality_count(generation):
+def print_quality_count(generation):
     """ print quality values, and indexes for any of this values"""
 
     print('\n count of any quality')
@@ -62,7 +62,7 @@ def create_many_generations(number_of_generations=10, generation_size=50, gen_le
                               generation_size=generation_size,
                               gen_length=gen_length
                              )
-        quality_count(k)
+        print_quality_count(k)
 
 
 def one_generation_pyplot(generation):
