@@ -16,8 +16,9 @@ MUTATION_CHANCE = 0.1
 if __name__ == '__main__':
     print('start \n')
 
-    genlib.create_many_generations(
-                                    number_of_generations=GENERATIONS_COUNT,
-                                    generation_size=GENERATION_SIZE,
-                                    gen_length=GENOM_SIZE
-                                  )
+    many_generations = genlib.create_many_generations(
+                                                      number_of_generations=GENERATIONS_COUNT,
+                                                      generation_size=GENERATION_SIZE,
+                                                      gen_length=GENOM_SIZE
+                                                     )
+    print(many_generations)

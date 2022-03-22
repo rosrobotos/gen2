@@ -57,12 +57,16 @@ def indexes_of_quality(generation):
 
 
 def create_many_generations(number_of_generations=10, generation_size=50, gen_length=10):
-    for i in range(number_of_generations):
-        k = create_generation(
-                              generation_size=generation_size,
-                              gen_length=gen_length
-                             )
-        print_quality_count(k)
+    list_of_dataframes = pd.Series(
+        data=[
+              create_generation(
+                                generation_size=generation_size,
+                                gen_length=gen_length
+                               ) for i in range(number_of_generations)
+             ],
+        name='creature_name')
+
+    return list_of_dataframes
 
 
 def one_generation_pyplot(generation):
