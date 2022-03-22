@@ -76,3 +76,10 @@ def one_generation_pyplot(generation):
                )
     plt.show()
 
+
+def many_generations_pyplot(list_of_generations):
+    qualities = [sum(generation.quality) for generation in list_of_generations]
+    sns.lineplot(
+                data=qualities,
+                )
+    plt.show()
