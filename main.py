@@ -21,4 +21,6 @@ if __name__ == '__main__':
                                                       generation_size=GENERATION_SIZE,
                                                       gen_length=GENOM_SIZE
                                                      )
-    genlib.many_generations_pyplot(many_generations)
+  #  genlib.many_generations_pyplot(many_generations)
+    onegeneration = genlib.create_generation()
+    genlib.almost_generation(onegeneration, GENOM_SIZE)

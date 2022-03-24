@@ -8,6 +8,7 @@ create_generation return generation (pandas DataFrame)
 __version__ = 0.14
 __author__ = 'github.com/rosrobotos'
 
+import random
 import random as rnd
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -94,3 +95,17 @@ def many_generations_pyplot(list_of_generations):
     qualities = [sum(generation.quality) for generation in list_of_generations]
     sns.lineplot(data=qualities)
     plt.show()
+
+
+def mutation(creature, gensize):
+    point = random.randint(0, gensize)
+    print('point = ',point)
+    creature[point] = int(not(creature[point].values))
+    return creature
+
+
+def almost_generation(generation, gensize):
+    sample = generation.sample()
+    print(sample)
+    sample = mutation(sample, gensize)
+    print(sample)
