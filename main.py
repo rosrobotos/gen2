@@ -23,4 +23,4 @@ if __name__ == '__main__':
                                                      )
   #  genlib.many_generations_pyplot(many_generations)
     onegeneration = genlib.create_generation()
-    genlib.almost_generation(onegeneration, GENOM_SIZE)
+    print(genlib.almost_generation(onegeneration))

@@ -97,15 +97,27 @@ def many_generations_pyplot(list_of_generations):
     plt.show()
 
 
-def mutation(creature, gensize):
-    point = random.randint(0, gensize)
-    print('point = ',point)
+def mutation(creature):
+    point = random.randint(0, len(creature))
     creature[point] = int(not(creature[point].values))
     return creature
 
 
-def almost_generation(generation, gensize):
+def almost_generation(generation):
     sample = generation.sample()
-    print(sample)
-    sample = mutation(sample, gensize)
-    print(sample)
+    sample = mutation(sample)
+
+    updatedgenration = pd.DataFrame(columns=generation.columns)
+    for creatureindex in generation.index:
+        if creatureindex == sample.index:
+            print(creatureindex, ' == ', sample.index)
+            updatedgenration.loc[creatureindex] = sample
+            #updatedgenration.append(sample)
+        else:
+            updatedgenration.loc[creatureindex] = generation.loc[creatureindex]
+
+
+    return updatedgenration
+
+
+
