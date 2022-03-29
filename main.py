@@ -1,6 +1,5 @@
 """
 I'm trying build genetic algorithm again....
-
 """
 
 __version__ = 0.21
@@ -16,11 +15,9 @@ MUTATION_CHANCE = 0.1
 if __name__ == '__main__':
     print('start \n')
 
-    many_generations = genlib.create_many_generations(
-                                                      number_of_generations=GENERATIONS_COUNT,
+    many_generations = genlib.create_many_generations(number_of_generations=GENERATIONS_COUNT,
                                                       generation_size=GENERATION_SIZE,
-                                                      gen_length=GENOM_SIZE
-                                                     )
-  #  genlib.many_generations_pyplot(many_generations)
-    onegeneration = genlib.create_generation()
-    print(genlib.almost_generation(onegeneration))
+                                                      gen_length=GENOM_SIZE)
+
+    one_generation = genlib.create_generation()
+    print(genlib.almost_generation(one_generation))
