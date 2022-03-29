@@ -75,12 +75,6 @@ def __mutation(creature: pd.Series) -> pd.Series:
 def almost_generation(generation):
     sample = generation.sample()
     sample = __mutation(sample)
-
-    updated_generation = pd.DataFrame(columns=generation.columns)
-    for creature_index in generation.index:
-        if creature_index == sample.index:
-            print(creature_index, ' == ', sample.index)
-            updated_generation.loc[creature_index] = sample[updated_generation.columns]
-        else:
-            updated_generation.loc[creature_index] = generation.loc[creature_index]
-    return updated_generation
+    print(sample)
+    generation.loc[sample.index] = sample[generation.columns].values
+    return generation
