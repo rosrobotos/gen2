@@ -69,12 +69,15 @@ def many_generations_pyplot(list_of_generations):
 def __mutation(creature: pd.Series) -> pd.Series:
     point = rnd.randint(0, len(creature))
     creature[point] = int(not creature[point].values)
+    creature['quality'] = 0
+    creature['quality'] = creature.sum(axis=1)
     return creature
 
 
 def almost_generation(generation):
     sample = generation.sample()
+    print(sample.quality, '\n')
     sample = __mutation(sample)
-    print(sample)
+    print(sample.quality, '\n')
     generation.loc[sample.index] = sample[generation.columns].values
     return generation
